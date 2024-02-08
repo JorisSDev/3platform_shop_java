@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="450.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kursinis.kursinis_main.fxControllers.tabs.UsersTabController">
+    <children>
+        <TableView fx:id="customerTable" layoutX="24.0" layoutY="14.0" prefHeight="178.0" prefWidth="661.0">
+            <columns>
+                <TableColumn fx:id="idColumnCustomer" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="loginColumnCustomer" prefWidth="145.0" text="Login" />
+                <TableColumn fx:id="passwordColumnCustomer" prefWidth="143.0" text="Password" />
+                <TableColumn fx:id="addressColumnCustomer" prefWidth="159.0" text="Address" />
+                <TableColumn fx:id="dummyColumnCustomer" minWidth="0.0" prefWidth="138.0" text="Action" />
+            </columns>
+        </TableView>
+        <TableView fx:id="managerTable" layoutX="24.0" layoutY="234.0" prefHeight="178.0" prefWidth="661.0">
+            <columns>
+                <TableColumn fx:id="idColumnManager" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="loginColumnManager" prefWidth="88.0" text="Login" />
+            <TableColumn fx:id="passwordColumnManager" prefWidth="101.0" text="Password" />
+            <TableColumn fx:id="EmployeeIdColumnManager" prefWidth="84.0" text="EmplyeeId" />
+            <TableColumn fx:id="employmentDateColumnManager" prefWidth="141.0" text="EmploymentDate" />
+            <TableColumn fx:id="isAdminColumnManager" prefWidth="65.0" text="isAdmin" />
+            <TableColumn fx:id="dummyColumnManager" prefWidth="106.0" text="Action" />
+            </columns>
+        </TableView>
+        <Button fx:id="addUserButton" layoutX="725.0" layoutY="14.0" mnemonicParsing="false" onAction="#addUser" text="Add form" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="429.0" prefWidth="975.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kursinis.kursinis_main.fxControllers.tabs.OrdersTabController">
+    <children>
+        <ListView fx:id="orderList" layoutX="23.0" layoutY="63.0" onMouseClicked="#loadSelectedOrder" prefHeight="320.0" prefWidth="300.0" />
+        <ListView fx:id="selectedOrderList" layoutX="338.0" layoutY="63.0" prefHeight="320.0" prefWidth="279.0" />
+        <HBox layoutX="231.0" layoutY="392.0" prefHeight="25.0" prefWidth="386.0" spacing="15.0">
+            <children>
+            <Button fx:id="completeOrderButton" mnemonicParsing="false" onAction="#completeOrder" text="Complete (delivered)" />
+                <Button fx:id="confirmOrderButton" mnemonicParsing="false" onAction="#confirmOrder" text="Confirm order (shipped)" />
+                <Button fx:id="cancelOrderButton" mnemonicParsing="false" onAction="#cancelOrder" text="Cancel order" />
+            </children>
+        </HBox>
+        <HBox layoutX="23.0" layoutY="23.0" prefHeight="25.0" prefWidth="594.0" spacing="15.0">
+            <children>
+                <ComboBox fx:id="statusFilterChoiceBox" prefWidth="150.0" promptText="Status" />
+                <ComboBox fx:id="customerFilterChoiceBox" prefWidth="150.0" promptText="Customer" />
+                <TextField fx:id="productCountFilterTextField" promptText="Product count" />
+                <Button fx:id="filterButton" mnemonicParsing="false" onAction="#filterOrderList" prefHeight="34.0" prefWidth="43.0" text="Filter" />
+                <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearFilter" text="Clear" />
+            </children>
+        </HBox>
+      <PieChart fx:id="orderStatusPieChart" layoutX="638.0" layoutY="23.0" prefHeight="306.0" prefWidth="323.0" />
+      <Text fx:id="totalItemsSold" layoutX="638.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total items sold:" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.kursinis.kursinis_main.fxControllers.tabs.ProductTabController"
+            prefHeight="450.0" prefWidth="1000.0">
+    <children>
+        <ListView fx:id="productListManager" layoutX="21.0" layoutY="14.0"
+                  onMouseClicked="#loadSelectedProductData" prefHeight="380.0" prefWidth="469.0"/>
+        <VBox layoutX="511.0" layoutY="14.0" prefHeight="204.0" prefWidth="220.0">
+            <children>
+                <ComboBox fx:id="productType" onAction="#enableProductFields" prefHeight="26.0"
+                          prefWidth="241.0" promptText="Product type"/>
+                <ComboBox fx:id="warehouseComboBox" prefHeight="26.0" prefWidth="242.0"
+                          promptText="Warehouse"/>
+                <TextField fx:id="productTitleField" prefHeight="26.0" prefWidth="241.0"
+                           promptText="Title"/>
+                <TextArea fx:id="productDescriptionField" prefHeight="69.0" prefWidth="243.0"
+                          promptText="Description"/>
+                <TextField fx:id="productManufacturerField" prefHeight="26.0" prefWidth="242.0"
+                           promptText="Manufacturer"/>
+                <TextField fx:id="productPriceField" prefHeight="26.0" prefWidth="242.0"
+                           promptText="Price"/>
+            </children>
+        </VBox>
+        <HBox layoutX="511.0" layoutY="366.0" prefHeight="25.0" prefWidth="221.0"
+              spacing="15.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#addNewProduct" prefHeight="25.0"
+                        prefWidth="101.0" text="Add new"/>
+                <Button mnemonicParsing="false" onAction="#updateProduct" prefHeight="25.0"
+                        prefWidth="98.0" text="Update"/>
+                <Button mnemonicParsing="false" onAction="#deleteProduct" prefHeight="25.0"
+                        prefWidth="94.0" text="Delete"/>
+            </children>
+        </HBox>
+        <VBox fx:id="productVBox" layoutX="750.0" layoutY="14.0" prefHeight="200.0"
+              prefWidth="225.0" spacing="20.0">
+            <children>
+                <VBox fx:id="CPUVBox" disable="true" prefHeight="98.0" prefWidth="220.0">
+                    <children>
+                        <TextField fx:id="CPUArchitectureField" promptText="CPU Architecture"/>
+                        <TextField fx:id="CPUClockSpeedField" prefHeight="25.0"
+                                   prefWidth="219.0" promptText="Clock speed (GHz)"/>
+                        <TextField fx:id="CPUCoreCountField" promptText="Core count"/>
+                        <CheckBox fx:id="CPUAPUField" mnemonicParsing="false"
+                                  text="Is this an APU?"/>
+                    </children>
+                </VBox>
+                <VBox fx:id="GPUVBox" disable="true" prefHeight="68.0" prefWidth="220.0">
+                    <children>
+                        <TextField fx:id="GPUVRAMSizeField" promptText="GPU VRAM size (GB)">
+                            <contextMenu>
+                                <ContextMenu>
+                                    <items>
+                                        <MenuItem mnemonicParsing="false"
+                                                  text="Unspecified Action"/>
+                                    </items>
+                                </ContextMenu>
+                            </contextMenu>
+                        </TextField>
+                        <TextField fx:id="GPUClockSpeedField" prefHeight="25.0"
+                                   prefWidth="219.0" promptText="Clock speed (MHz)"/>
+                        <TextField fx:id="GPUPowerConsumptionField"
+                                   promptText="Power consumption (W)"/>
+                    </children>
+                </VBox>
+                <VBox fx:id="RAMVBox" disable="true" prefHeight="68.0" prefWidth="220.0">
+                    <children>
+                        <TextField fx:id="RAMTypeField" promptText="RAM type">
+                            <contextMenu>
+                                <ContextMenu>
+                                    <items>
+                                        <MenuItem mnemonicParsing="false"
+                                                  text="Unspecified Action"/>
+                                    </items>
+                                </ContextMenu>
+                            </contextMenu>
+                        </TextField>
+                        <TextField fx:id="RAMCapacityField" prefHeight="25.0" prefWidth="219.0"
+                                   promptText="Capacity (GB)"/>
+                        <TextField fx:id="RAMSpeedField" promptText="Speed (Mhz)"/>
+                    </children>
+                </VBox>
+                <VBox fx:id="MotherboardVBox" disable="true" prefHeight="68.0"
+                      prefWidth="220.0">
+                    <children>
+                        <TextField fx:id="MotherboardSocketTyperField"
+                                   promptText="Motherboard Socket type (AM4, AM5)">
+                            <contextMenu>
+                                <ContextMenu>
+                                    <items>
+                                        <MenuItem mnemonicParsing="false"
+                                                  text="Unspecified Action"/>
+                                    </items>
+                                </ContextMenu>
+                            </contextMenu>
+                        </TextField>
+                        <TextField fx:id="MotherboardFormFactorField" prefHeight="25.0"
+                                   prefWidth="219.0" promptText="Form factor (ATX, mATX)"/>
+                        <TextField fx:id="MotherboardRAMTypeField" promptText="RAM type"/>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+        <Button layoutX="511.0" layoutY="225.0" mnemonicParsing="false"
+                onAction="#clearProductSelection" prefHeight="25.0" prefWidth="219.0"
+                text="Clear"/>
+    </children>
+
+</AnchorPane>
