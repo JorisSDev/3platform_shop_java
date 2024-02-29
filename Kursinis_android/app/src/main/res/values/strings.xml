@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Kursinis_android</string>
+    <string name="login_label">Enter login:</string>
+    <string name="password_label">Enter password:</string>
+    <string name="login_button">Log in!</string>
+    <string name="my_account_button">My info</string>
+    <string name="my_purchases_button">View my purchases</string>
+    <string name="title_activity_login">sdfghjk</string>
+</resources>
